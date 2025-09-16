@@ -47,7 +47,7 @@ public class CustomSecurityConfig {
 
     http
       .authorizeHttpRequests(auth -> auth
-          .requestMatchers("/css/**", "/js/**", "images/**").permitAll() // 정적 리소스 혀용
+          .requestMatchers("/css/**", "/js/**", "images/**",   "/favicon.ico").permitAll() // 정적 리소스 혀용
           .requestMatchers("/member/login").permitAll()                    // 로그인 페이지
           .anyRequest().authenticated() // 나머지는 인증필요
         )

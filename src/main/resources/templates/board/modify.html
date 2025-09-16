@@ -188,9 +188,12 @@
     }
 
     function callRemoveFiles() {
+        console.log(removeFileList);
         removeFileList.forEach(
             ({uuid,fileName}) => {
-             removeFileToServer({uuid,fileName});
+                console.log(uuid);
+                console.log(fileName);
+                removeFileToServer({uuid,fileName});
             });
     }
 
