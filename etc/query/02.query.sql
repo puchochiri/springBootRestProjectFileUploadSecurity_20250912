@@ -116,3 +116,11 @@ select moddate, regdate, reply_text, replyer, board_bno from reply;
 
 delete from board_image where board_bno is null;
 
+create table persistent_logins (
+    username varchar(64) not null,
+    series varchar(64) primary key,
+    token varchar(64) not null,
+    last_used timestamp not null
+);
+
+select * from persistent_logins;
