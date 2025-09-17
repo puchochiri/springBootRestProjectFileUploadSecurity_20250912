@@ -76,6 +76,8 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
+    // Spring Boot 3.x 및 Spring Security 6과 호환되는 라이브러리입니다.
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 
 
 }

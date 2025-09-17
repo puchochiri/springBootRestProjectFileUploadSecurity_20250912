@@ -34,6 +34,8 @@ public class BoardController {
 
   private final BoardService boardService;
 
+
+
   @GetMapping("/list")
   public void list(PageRequestDTO pageRequestDTO, Model model){
 
@@ -50,7 +52,7 @@ public class BoardController {
 
 
   }
-
+  /*@PreAuthorize("isAuthenticated()")*/
   @PreAuthorize("hasRole('USER')")
   @GetMapping("/register")
   public void registerGET(){
