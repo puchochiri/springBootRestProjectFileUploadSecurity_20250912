@@ -52,7 +52,7 @@ public class BoardController {
 
 
   }
-  /*@PreAuthorize("isAuthenticated()")*/
+
   @PreAuthorize("hasRole('USER')")
   @GetMapping("/register")
   public void registerGET(){
@@ -83,7 +83,7 @@ public class BoardController {
     return "redirect:/board/list";
 
   }
-
+  @PreAuthorize("isAuthenticated()")
   @GetMapping({"/read", "/modify"})
   public void read(Long bno, PageRequestDTO pageRequestDTO, Model model){
     BoardDTO boardDTO = boardService.readOne(bno);
@@ -91,7 +91,6 @@ public class BoardController {
     log.info(boardDTO);
 
     model.addAttribute("dto",boardDTO);
-
   }
 
   @PostMapping("/modify")

@@ -53,7 +53,7 @@ public class CustomSecurityConfig {
         )
       .formLogin(form -> form
               .loginPage("/member/login")
-              .defaultSuccessUrl("/")
+              .defaultSuccessUrl("/board/list", true)
       )
       .csrf(csrf -> csrf.disable())
             .rememberMe(rememberMe -> rememberMe
